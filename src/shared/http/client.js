@@ -17,7 +17,7 @@ export const configureHttp = (next) => { handlers = { ...handlers, ...next }; };
 
 export const http = axios.create({
   baseURL: env.apiBaseUrl,
-  timeout: 15000,
+  timeout: 90000, // 90 seconds to allow Render cold start without triggering a CORS/timeout error
   headers: { 'Content-Type': 'application/json' },
 });
 
